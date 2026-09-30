@@ -1,5 +1,7 @@
 # SauceDemo Playwright Automation
 
+[![Playwright Tests](https://github.com/Chard-QA/saucedemo-playwright/actions/workflows/playwright.yml/badge.svg)](https://github.com/Chard-QA/saucedemo-playwright/actions/workflows/playwright.yml)
+
 End-to-end UI automation framework built with **Playwright** and **TypeScript** for the SauceDemo application, with additional API automation practice using JSONPlaceholder.
 
 ---
