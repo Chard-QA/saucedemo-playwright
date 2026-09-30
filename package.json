@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npx playwright test",
     "test:ui": "npx playwright test tests/ui",
+    "test:api": "npx playwright test tests/api",
     "report": "npx playwright show-report"
   },
   "keywords": [],

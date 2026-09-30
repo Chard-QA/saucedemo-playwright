@@ -103,3 +103,33 @@ test('API-005 Delete a post', async ({ request }) => {
     expect(response.status()).toBe(200);
     expect(body).toEqual({});
 });
+
+test('API-006 GET Posts Using Query Parameters', async ({ request }) => {
+    const response = await request.get('https://jsonplaceholder.typicode.com/posts', {
+        params: {
+            userId: 1
+        }
+    })
+    expect(response.status()).toBe(200);
+
+    const body = await response.json();
+
+    expect(Array.isArray(body)).toBe(true);
+    expect(body.length).toBeGreaterThan(0);
+
+    for (const post of body) {
+        expect(post.userId).toBe(1);
+    }
+
+})
+
+test('API-007 Get nonexistent post', async ({ request }) => {
+
+    const response = await request.get('https://jsonplaceholder.typicode.com/posts/999999')
+
+    expect(response.status()).toBe(404);
+
+    const body = await response.json();
+
+    expect(body).toEqual({});
+})
